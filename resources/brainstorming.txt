@@ -1,0 +1,12 @@
+Classes:
+    Character
+        What is it?
+            -Name
+            -Health
+            -Attack Points (?)
+            -Attack Names (?)
+        What can it do?
+            -Take damage
+            -Attack
+            -
+    

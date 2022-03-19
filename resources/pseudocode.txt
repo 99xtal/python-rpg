@@ -1,0 +1,17 @@
+PSUEDUOCODE:
+
+When game starts:
+    Display title card
+    Prompt player to start new game or quit program
+
+Combat(character1, character2):
+    while (True)
+        character1_dmg = character1.attack(character2)
+        character2.take_damage(character1_dmg)
+        if not character2.is_alive:
+            return character1
+        character2_dmg = character2.random_attack(character1)
+        character1.take_damage(character2_dmg)
+        if not character1.is_alive:
+            return character2
+            
