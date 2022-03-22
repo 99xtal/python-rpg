@@ -6,14 +6,15 @@ class Scene:
         self.contains_combat = None
         self.boss = None
         self.splash_screen = ''
+        self.actions = None
 
-    def add_title(self, title):
+    def set_title(self, title):
         self.title = title
 
-    def add_description(self, description):
+    def set_description(self, description):
         self.description = description
 
-    def add_text(self, text_list):
+    def set_text(self, text_list):
         self.text = text_list
 
     def set_combat(self, bool):
@@ -24,6 +25,9 @@ class Scene:
 
     def set_splash_screen(self, ascii):
         self.splash_screen = ascii
+
+    def set_actions(self, actions_list):
+        self.actions = actions_list
         
     def print_scene(self):
         print(f'''

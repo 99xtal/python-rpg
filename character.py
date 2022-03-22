@@ -1,9 +1,6 @@
 import random
 import time
 
-
-
-
 class Character:
     def __init__(self, name, health, max_health, attack_power, attack_names, icon=''):
         self.name = name
@@ -15,9 +12,19 @@ class Character:
         self.is_alive = True
 
     def input_attack(self):
-        attack_choice = input(f"\tHow will you attack your foe?\n\n{self.list_attack_names()}\n\n\t>>> ")
-        print(f"\t{self.name.upper()} uses {attack_choice.upper()}!")
-        print(f"\t{self.attack_names[attack_choice]}")
+        while(True):
+            attack_choice = input(f"\tHow will you attack your foe?\n\n{self.list_attack_names()}\n\n\t>>> ").lower()
+            attack_name_keys = list(self.attack_names)
+            if (attack_choice.isnumeric() and int(attack_choice) in range(len(self.attack_names))):
+                print(f"\t{self.name.upper()} uses {attack_name_keys[int(attack_choice)].upper()}")
+                print(f"\t{self.attack_names[attack_name_keys[int(attack_choice)]]}")
+                break
+            elif (attack_choice in attack_name_keys):
+                print(f"\t{self.name.upper()} uses {attack_choice.upper()}")
+                print(f"\t{self.attack_names[attack_choice]}")
+                break
+            else:
+                print("\tHuh? Try entering the number or name of attack.\n")
         time.sleep(1)
         return self.generate_attack_damage()
 
@@ -48,7 +55,8 @@ class Character:
 
     def list_attack_names(self):
         attack_list_str = ''
-        for attack in self.attack_names:
-            attack_list_str += f"\t({attack})\n"
+        attack_name_keys = list(self.attack_names)
+        for i in range(len(attack_name_keys)):
+            attack_list_str += f"\t({i})\t{attack_name_keys[i].title()}\n"
         return attack_list_str
-        
+    
