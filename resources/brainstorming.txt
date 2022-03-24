@@ -1,12 +1,8 @@
-Classes:
-    Character
-        What is it?
-            -Name
-            -Health
-            -Attack Points (?)
-            -Attack Names (?)
-        What can it do?
-            -Take damage
-            -Attack
-            -
-    
+done    Hercules walks to Mycenae from Delphi
+    Hercules approaches the castle at Mycenae
+done    King asks Hercules to kill the Nemean lion
+done    Hercules fights the Nemean lion
+done    Hercules returns to king with lions head, King asks Hercuels to kill Lernaean Hydra
+done    Hercules fights the Lernaean Hydra
+    Hercules returns to king with Hydra head, King asks Hercules to capture Cerberus
+done    Hercules returns to king with Cerberus, 
