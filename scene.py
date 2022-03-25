@@ -35,7 +35,13 @@ class Scene:
     def set_actions(self, actions_list):
         self.actions = actions_list
         return self
-        
+    
+    def print_actions(self):
+        actions_str = "\tACTIONS: "
+        for action in self.actions:
+            actions_str += f"{action}\t"
+        print(actions_str)
+
     def print_scene(self):
         print(f'''
         |-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_|-|_
