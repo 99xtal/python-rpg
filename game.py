@@ -22,11 +22,13 @@ class Game:
                 self.prompt_action(current_scene)
 
     def run_combat(self, scene):
+        '''Have player fight scene boss, then reset health and move on'''
         winner = self.boss_fight(scene.boss)
         self.print_combat_result(winner, scene.boss)
 
         self.player.reset_health()
         scene.boss.reset_health()
+        
         if winner.name == self.player.name:
             self.current_scene_marker += 1
         else:
@@ -52,6 +54,7 @@ class Game:
             time.sleep(3)
 
     def prompt_action(self, scene):
+        '''Handle user input for scene actions'''
         while(True):
             user_input = input("\t>>> ").lower()
             if user_input in scene.actions:

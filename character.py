@@ -38,7 +38,7 @@ class Character:
         return self.generate_attack_damage()
 
     def take_damage(self, damage):
-        if (damage > self.health):
+        if (damage >= self.health):
             self.health = 0
             self.is_alive = False
         else:
@@ -48,6 +48,7 @@ class Character:
 
     def reset_health(self):
         self.health = self.max_health
+        self.is_alive = True
 
     def generate_attack_damage(self):
         d20_roll = random.random()
